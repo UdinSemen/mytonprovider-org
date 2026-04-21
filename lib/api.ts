@@ -2,8 +2,7 @@ import axios, { AxiosError } from "axios"
 import type { Provider, ApiResponse } from "@/types/provider"
 import { FiltersData, FiltersRange } from "@/types/filters";
 
-// const host = "http://localhost:9090"
-const host = "https://mytonprovider.org"
+const host = process.env.NEXT_PUBLIC_API_URL ?? ""
 
 export async function fetchFiltersRange(): Promise<ApiResponse> {
   var loading = false;
